@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào mừng bạn đến với Windows</title>
+    <link rel="stylesheet" href="file.css">
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="background-overlay"></div>
+
+    <div id="lock-screen">
+        <div class="time-date-container">
+            <div id="time"></div>
+            <div id="date"></div>
+        </div>
+    </div>
+
+    <div class="login-box initially-hidden">
+        <img src="av.png" alt="User Avatar" class="user-avatar">
+        <h2 class="user-name">LunarMoonDLCT</h2>
+        <div class="login-content-stage">
+            <div class="password-input-group">
+                <input type="password" id="password-input-real" autocomplete="current-password">
+                <div id="password-display" data-placeholder="Mật khẩu"></div>
+                <i id="toggle-password" class="toggle-icon"></i>
+                <button id="login-button" class="login-arrow">➔</button>
+            </div>
+            <p id="error-message" class="error-message"></p>
+            <div id="welcome-screen">
+                <div class="spinner"></div>
+                <h2 class="welcome-text">Chào mừng</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="file-explorer" class="initially-hidden">
+        <div class="window-header">
+            <div class="title">File Explorer</div>
+            <div class="window-controls">
+                <button class="control-btn" aria-label="Minimize">_</button>
+                <button class="control-btn" aria-label="Maximize">□</button>
+                <button class="control-btn close-btn" aria-label="Close">×</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="sidebar">
+                <div class="sidebar-header">This PC</div>
+                <ul id="drives-list"></ul>
+            </div>
+            <div class="main-content">
+                <div class="address-bar">
+                    <button id="back-button" aria-label="Back">↑</button>
+                    <input type="text" id="address-bar-input">
+                </div>
+                <div id="file-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="context-menu" class="hidden">
+        <ul>
+            <li data-action="download">Download</li>
+            <li data-action="properties">Properties</li>
+        </ul>
+    </div>
+
+    <div id="taskbar" class="hidden">
+        <div id="taskbar-explorer-icon" class="taskbar-item hidden" data-window-id="file-explorer">
+            <div class="icon folder"></div>
+            <span>File Explorer</span>
+        </div>
+    </div>
+
+    <div id="progress-modal" class="hidden">
+        <div class="progress-content">
+            <h3 id="progress-title">Đang xử lý...</h3>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div class="progress-details">
+                <span id="progress-percentage">0%</span>
+                <span id="progress-eta">Thời gian ước tính: Đang tính toán...</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="logic.js" defer></script>
+</body>
+</html>
